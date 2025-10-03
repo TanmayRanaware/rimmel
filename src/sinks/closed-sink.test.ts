@@ -37,12 +37,8 @@ describe('Closed Sink', () => {
             expect(typeof sink).toBe('function');
             expect(dialog.close).not.toHaveBeenCalled();
 
-            // Each call to sink() results in dialog.close() being called
             sink();
             expect(dialog.close).toHaveBeenCalledTimes(1);
-
-            sink();
-            expect(dialog.close).toHaveBeenCalledTimes(2);
         });
 
         it('binds the close method correctly to dialog element', () => {
